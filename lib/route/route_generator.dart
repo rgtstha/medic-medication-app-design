@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:medic_medication_app/screens/login_signup_screen/login_sign_up_screen.dart';
+import 'package:medic_medication_app/screens/main_screen/main_screen.dart';
 
 import '../screens/onboarding/onboarding_screen.dart';
 import '../screens/splash/splash_screen.dart';
@@ -11,7 +12,8 @@ class RouteGenerator {
 
   static const String splashScreen = '/';
   static const String onboardingScreen = '/onboarding';
-  static const String loginSignUpScreen = 'login_signup';
+  static const String loginSignUpScreen = '/login_signup';
+  static const String mainScreen = '/main_screen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     log("Settings ${settings.name}");
@@ -24,6 +26,9 @@ class RouteGenerator {
 
       case loginSignUpScreen:
         return MaterialPageRoute(builder: (_) => const LoginSignUpScreen());
+
+      case mainScreen:
+        return MaterialPageRoute(builder: (_) => const MainScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());

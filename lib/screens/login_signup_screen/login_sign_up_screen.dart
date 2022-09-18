@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:medic_medication_app/route/route_generator.dart';
 import 'package:medic_medication_app/theme/app_color.dart';
 import 'package:medic_medication_app/theme/app_sizes.dart';
 import 'package:medic_medication_app/utils/validators.dart';
@@ -124,7 +125,10 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            RouteGenerator.mainScreen, (route) => false);
+                      },
                       child: ValueListenableBuilder(
                         valueListenable: authScreenNotifier,
                         builder: (context, authScreen, child) {

@@ -22,8 +22,13 @@ class AppSizes {
   static const s38 = 38.0;
   static const s40 = 40.0;
   static const s50 = 50.0;
+  static const s60 = 60.0;
+  static const s65 = 65.0;
+  static const s70 = 70.0;
 
   static const s100 = 100.0;
+  static const s180 = 180.0;
+  static const s200 = 200.0;
 
   static const globalHPadding = s28;
 }

@@ -5,12 +5,18 @@ import 'package:medic_medication_app/theme/app_color.dart';
 class AppTheme {
   const AppTheme._();
 
+  static AppBarTheme get appBarTheme => const AppBarTheme(
+        backgroundColor: AppColor.backgroundColor,
+        elevation: 0,
+      );
+
   static ThemeData theme() {
     final baseTheme = ThemeData(brightness: Brightness.dark);
     return ThemeData(
       brightness: Brightness.dark,
       inputDecorationTheme: inputDecorationTheme,
       textSelectionTheme: textSelectionTheme,
+      appBarTheme: appBarTheme,
       scaffoldBackgroundColor: AppColor.backgroundColor,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(

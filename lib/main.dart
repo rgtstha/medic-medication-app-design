@@ -4,6 +4,7 @@ import 'package:medic_medication_app/route/route_generator.dart';
 import 'package:medic_medication_app/theme/app_theme.dart';
 
 void main() {
+  debugInvertOversizedImages = true;
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.theme(),
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoute,
       onGenerateInitialRoutes: RouteGenerator.generateInitialRoutes,
     );
