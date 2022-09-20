@@ -1,16 +1,17 @@
-# medic_medication_app
+# Medic Meditation App
 
-A new Flutter project.
+A Minimal and clean meditation app design using Flutter. Inspired from [this design.](https://www.uistore.design/items/medic-free-meditation-app-for-figma/)
 
-## Getting Started
+# Screenshots
 
-This project is a starting point for a Flutter application.
+|Splash Screen|Onboarding Screen|
+|:--:|:--:|
+|<img src="screenshots/splash_screen.png" />|<img src="screenshots/onboarding_screen.png" />|
 
-A few resources to get you started if this is your first Flutter project:
+|Login Screen|Sign Up Screen|
+|:--:|:--:|
+|<img src="screenshots/sign_in_screen.png" />|<img src="screenshots/sign_up_screen.png" /> |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|Home Screen|Sound Screen|
+|:--:|:--:|
+|<img src="screenshots/home_screen.png" />|<img src="screenshots/sound_screen.png" />|
