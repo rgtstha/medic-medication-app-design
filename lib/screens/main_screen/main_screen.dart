@@ -55,15 +55,19 @@ class _MainScreenState extends State<MainScreen> {
               'assets/images/logo.svg',
               height: 24,
             ),
-            label: "",
+            label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/sound.svg'),
-            label: "",
+            icon: SvgPicture.asset(
+              'assets/icons/sound.svg',
+            ),
+            label: "Sound",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/profile.svg'),
-            label: "",
+            icon: SvgPicture.asset(
+              'assets/icons/profile.svg',
+            ),
+            label: "Profile",
           ),
         ],
       ),
