@@ -17,60 +17,68 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
 
-  List<Widget> screens = [
-    const HomeScreen(),
-    const SoundScreen(),
-    const ProfileScreen(),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.s16),
-        child: screens.elementAt(currentIndex),
+        child: MainScreenItem.items.elementAt(currentIndex).screen,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() {
-            currentIndex = value;
-          });
-        },
         backgroundColor: AppColor.backgroundColor,
-        iconSize: 25,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedIconTheme: const IconThemeData(
-          size: 25,
-          color: AppColor.white,
-        ),
-        unselectedIconTheme: const IconThemeData(
-          size: 20,
-          color: AppColor.primary,
-        ),
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/images/logo.svg',
-              height: 24,
-            ),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/sound.svg',
-            ),
-            label: "Sound",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/profile.svg',
-            ),
-            label: "Profile",
-          ),
-        ],
+        items: MainScreenItem.items
+            .map((e) => BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  e.iconPath,
+                  height: 20,
+                  color: AppColor.white60,
+                ),
+                label: e.label,
+                activeIcon: SvgPicture.asset(
+                  e.iconPath,
+                  height: 24,
+                  color: AppColor.white,
+                  fit: BoxFit.fitHeight,
+                )))
+            .toList(growable: false),
+        onTap: (value) {
+          setState(() => currentIndex = value);
+        },
       ),
     );
   }
+}
+
+class MainScreenItem {
+  final Widget screen;
+  final String label;
+  final String iconPath;
+
+  MainScreenItem({
+    required this.screen,
+    required this.label,
+    required this.iconPath,
+  });
+
+  static List<MainScreenItem> items = [
+    MainScreenItem(
+      screen: const HomeScreen(),
+      label: "Home",
+      iconPath: 'assets/images/logo.svg',
+    ),
+    MainScreenItem(
+      screen: const SoundScreen(),
+      label: "Sound",
+      iconPath: 'assets/icons/sound.svg',
+    ),
+    MainScreenItem(
+      screen: const ProfileScreen(),
+      label: "Profile",
+      iconPath: 'assets/icons/profile.svg',
+    )
+  ];
 }
